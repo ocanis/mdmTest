@@ -1,0 +1,44 @@
+requête numéro 1:
+
+SELECT date , SUM(totalPerTransaction) AS "vente"  
+FROM   
+-- Calculer le total du prix de vente par transaction = prod_price*prod_qty
+( SELECT date  , (prod_price * prod_qty) AS 'totalPerTransaction'  
+  FROM TRANSACTIONS  ) AS totalPerTransactionTemporaryTable
+-- Les conditions dans la clause WHERE
+-- Permettent de selectionner uniquement les transactions
+-- ayant eus lieu entre le 01-01-2019 et 31-12-2019
+WHERE date >= CAST( "2019-01-01" AS DATE ) and date <= CAST( "2019-12-31" AS DATE )
+-- Le GROUP BY permet l'aggrégation (somme) des ventes par jour
+GROUP BY date
+-- Les totals de ventes par jour sont triés 
+-- de la plus ancienne à la plus récente
+ORDER BY date
+
+
+------------------------------
+requête numéro 2:
+
+SELECT T.client_id, 
+
+	-- On selectionne les transactions des produits de type "MEUBLE"
+     (
+      SELECT SUM(trans.prod_price*trans.prod_qty ) 
+      FROM transactions AS trans, product_nomenclature AS prod_nom
+	  WHERE trans.client_id=T.client_id and trans.prod_id=prod_nom.prod_id and prod_nom.product_type="MEUBLE"  
+     )
+	 AS "ventes_meuble",
+     (
+      SELECT SUM(trans.prod_price*trans.prod_qty ) 
+     FROM transactions AS trans, product_nomenclature AS prod_nom
+	 WHERE trans.client_id=T.client_id and trans.prod_id=prod_nom.prod_id and prod_nom.product_type="DECO" 
+     ) AS "ventes_deco"
+     
+
+FROM transactions AS T
+GROUP BY T.client_id
+
+
+
+
+
