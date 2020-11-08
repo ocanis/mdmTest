@@ -1,4 +1,4 @@
-Parse Arrays ver Hackerrank :
+Parse Arrays version Hackerrank :
 
 sparseArraysHackerrankSolution.py
 
