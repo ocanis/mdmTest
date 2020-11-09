@@ -15,6 +15,16 @@ class MatchingString:
         return strings
 
     def matchingStringsMethod(self, queries):
+        """
+        The function return a dict representing the frequency of occurrence of each query string in strings
+            ------
+        parameters:
+        string strings[n] - an array of strings to search
+        string queries[q] - an array of query strings
+            ------
+        Returns:
+        resDict: a dict of results for each query its occurrence frequency
+        """
         resDict = {}
         res = [self.strings.count(query) for query in queries]
         resDict = {queries[i]: res[i] for i in range(len(queries))}
