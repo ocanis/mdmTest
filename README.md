@@ -23,6 +23,7 @@ Here, “aba” occurs twice, in the first and third string. The string “xzxb�
 [Please click here](https://www.hackerrank.com/challenges/sparse-arrays/problem)
 ### 1.3 Maison du Monde problem & details
 Please refer to the document:
+
 📦mdmTest
   ┣ 📂doc_maison_du_monde
  ┃ ┗ 📜doc_test_technique_mdm.pdf
@@ -30,18 +31,24 @@ Please refer to the document:
 ## 2. Solution 
 ### 2.1 Solution of Original problem
 Find it here :
+
 📦mdmTest
  ┣ 📂sparseArraysHackerrankSolution
  ┃ ┣ 📜readme.txt
  ┃ ┗ 📜sparseArraysHackerrankSolution.py
+ 
+ 
 To run sparseArraysHackerrankSolution.py. Make sure to login to hackerrank [click here](https://www.hackerrank.com/challenges/sparse-arrays/problem) and copy/paste the code on the platform & run it.
 
 ### 2.2 Solution of Maison du Monde (mdm) problem
 The solution provided in a tree structure :
+
 📦mdmTest
  ┣ 📜main.py
  ┣ 📜sparseArray.py
  ┗ 📜strings.txt
+ 
+ 
 Where sparseArray.py is a python module that main.py uses to solve the mdm problem, and strings.txt provide collection of N strings.
 
 To run a code:
@@ -57,8 +64,13 @@ As an output you'll get a dict like this:
 > resDict =  {'abcde': 1, 'sdaklfj': 3, 'asdjf': 4, 'na': 3, 'basdn': 2}
 ### 2.2.1 Docker containerization of mdmTest
 Containerization of mdmTest see Dockerfile:
+
+
 📦mdmTest
  ┣ 📜Dockerfile
+ 
+
+
 Please find the Docker image of mdmTest on dockerHub [here](https://hub.docker.com/r/ocanis/mdmtest_do).
 
 To run it:
@@ -72,7 +84,9 @@ $ docker run ocanis/mdmtest_do:mdmtest abcde sdaklfj asdjf na basdn
 ```
 You will get the same result as in part 2.2
 ## 3. SQL
-Here you can find SQL queries 
+Here you can find SQL queries
+
+
 📦mdmTest
 ┣ 📂sql
  ┃ ┗ 📜requete_sql.txt
